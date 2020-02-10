@@ -1,22 +1,19 @@
 //set up function for current day display on jumbotron
 // 1. catch html element (location) and set as variable
 let currentDate = new Date();
-let dateNow = "Today:" + (currentDate.getMonth()+1) + "/"
+let dateNow = "Today's Date: " + (currentDate.getMonth()+1) + "/"
     + currentDate.getDate() + "/"
     + currentDate.getFullYear();
 // 2.text() to display changes
 $('#currentDay').text(dateNow);
 
-
-// var currentdate = new Date(); 
-//     var datetime = "Now: " + currentdate.getDate() + "/"
-//                 + (currentdate.getMonth()+1)  + "/" 
-//                 + currentdate.getFullYear() + " @ "  
-//                 + currentdate.getHours() + ":"  
-//                 + currentdate.getMinutes() + ":" 
-//                 + currentdate.getSeconds();
-
-// document.write(datetime);
+// same for the current time
+let currentTime = new Date();
+let timeNow = "Time: " + currentTime.getHours() + ":"
+    + currentTime.getMinutes() + ":"
+    + currentTime.getSeconds();
+// set text() to #currentTime
+$('#currentTime').text(timeNow);
 
 
 // set up function for current time display on jumbotron
