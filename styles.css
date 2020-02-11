@@ -47,17 +47,17 @@ body {
   }
   
   .past {
-    background-color: #d3d3d3;
+    background-color: #d3d3d3ab;
     color: white;
   }
   
   .present {
-    background-color: #ff6961;
+    background-color: #61a0ffcc;
     color: white;
   }
   
   .future {
-    background-color: #77dd77;
+    background-color: #9e77ddc0;
     color: white;
   }
   
@@ -65,7 +65,7 @@ body {
     border-left: 1px solid black;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    background-color: #06AED5;
+    /* background-color: rgb(6, 213, 85); */
     color: white;
   }
   

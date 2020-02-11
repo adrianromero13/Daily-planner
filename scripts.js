@@ -17,6 +17,7 @@ $('#currentTime').text(timeNow);
 
 
 // set up function for current time display on jumbotron
+
 // 1. catch html element (location) and set as variable
 // 2.text() to display changes
 
