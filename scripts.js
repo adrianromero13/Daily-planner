@@ -10,16 +10,9 @@ $('#currentDay').text(dateNow);
 // same for the current time
 let currentTime = new Date();
 let timeNow = "Time: " + currentTime.getHours() + ":"
-    + currentTime.getMinutes() + ":"
-    + currentTime.getSeconds();
+    + currentTime.getMinutes();
 // set text() to #currentTime
 $('#currentTime').text(timeNow);
-
-
-// set up function for current time display on jumbotron
-
-// 1. catch html element (location) and set as variable
-// 2.text() to display changes
 
 
 
@@ -32,5 +25,16 @@ $('#currentTime').text(timeNow);
 // set up function to save textarea to localstorage
 // 1. .this() on any save button to save textarea
 // 2. set text as variable
-// 3. transfer to local storage
-// 4. make retrievable
+$('text-center').on('click', function() {
+    let $task = $('textarea').this().text();
+    
+    // set the item in localStorage
+    localStorage.setItem('test', $task);
+    
+    // alert the value to check if we got it
+    console.log(alert(localStorage.getItem('test')));
+    // 3. transfer to local storage
+    // 4. make retrievable
+   
+
+});
