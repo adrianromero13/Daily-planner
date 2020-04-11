@@ -43,10 +43,25 @@ $(document).ready(function () {
             console.log('rowTime', rowTime);
 
             // set if statements for when hour changes
-            
-        })
+            if (rowTime < hourOfDay) {
+                // add the class attr of past to the parent div
+                $(this).parent().addClass('past');
+            }
+            // set else if for the present class attribute
+            else if (rowTime === hourOfDay) {
+                //remove other class if they are present
+                $(this).removeClass('past');
+                $(this).parent().addClass('present');
+            }
+            // set default else statement
+            else {
+                // remove old classes to set future
+                $(this).removeClass('past', 'present');
+                $(this).addClass('future');
+            }
+        });
         
     }
     timeDepDisplay();
 
-})
+});
