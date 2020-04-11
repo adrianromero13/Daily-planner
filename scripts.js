@@ -29,6 +29,24 @@ $(document).ready(function () {
     });
 
     // set up function to change css depending on time of day
+    function timeDepDisplay() {
+        //current hour of the day
+        let hourOfDay = moment().hours();
+        console.log('hourOfDay', hourOfDay)
 
+        // function to loop over planner rows for info on hour
+        $('.description').each(function() {
+            //get number from textarea tag attribute( id) and split value by the ('-')
+            //and only keep the second index (only the digit)
+            //parseInt converts the string into an integer
+            let rowTime = parseInt($(this).attr('id').split('-')[1]);
+            console.log('rowTime', rowTime);
+
+            // set if statements for when hour changes
+            
+        })
+        
+    }
+    timeDepDisplay();
 
 })
