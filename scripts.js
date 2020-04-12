@@ -10,11 +10,22 @@ $(document).ready(function () {
     $('#currentDay').text(dateNow);
 
     // same for the current time
-    let currentTime = new Date();
-    let timeNow = "Time: " + currentTime.getHours() + ":"
-        + currentTime.getMinutes();
-    // set text() to #currentTime
-    $('#currentTime').text(timeNow);
+    function timeDisplayed() {
+        let currentTime = new Date();
+        let hours = currentTime.getHours();
+        let minutes = currentTime.getMinutes()
+            if (minutes < 10) {
+                minutes = "0" + minutes;
+            };
+        let seconds = currentTime.getSeconds()
+            if (seconds < 10) {
+                seconds = "0" + seconds;
+            };
+        let text = ("Time: " + hours + ':' + minutes + ':' + seconds);
+        // here we get the element and change the content to the text variable we made above
+        document.getElementById('currentTime').innerHTML = text;
+      }
+      setInterval(timeDisplayed, 1000);
 
 // saving textarea value into storage at the click of the save button
     $('.saveBtn').on('click', function () {
@@ -32,7 +43,7 @@ $(document).ready(function () {
     function timeDepDisplay() {
         //current hour of the day
         let hourOfDay = moment().hours();
-        console.log('hourOfDay', hourOfDay)
+        // console.log('hourOfDay', hourOfDay)
 
         // function to loop over planner rows for info on hour
         $('.description').each(function() {
@@ -40,7 +51,7 @@ $(document).ready(function () {
             //and only keep the second index (only the digit)
             //parseInt converts the string into an integer
             let rowTime = parseInt($(this).attr('id').split('-')[1]);
-            console.log('rowTime', rowTime);
+            // console.log('rowTime', rowTime);
 
             // set if statements for when hour changes
             if (rowTime < hourOfDay) {
